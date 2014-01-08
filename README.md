@@ -1,4 +1,7 @@
-# Karma plugin for sprockets based web applications (rails based or not)
+# karma-sprockets
+
+This is a plugin for sprockets based web applications. Notably, it tightens the integration
+between karma and rails applications. (Because they use sprockets bundles by default).
 
 Adds a couple of configuration options to help with loading js files defined in sprockets bundles
 (via require directives). This is now the default way to structure client side code in Rails
