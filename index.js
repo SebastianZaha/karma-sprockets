@@ -3,7 +3,11 @@ var Chain = require('sprockets-chain');
 
 var createSprockets = function(config) {
     var sc = new Chain();
-    sc.appendPath(config.basePath + '/' + config.sprocketsPath);
+    
+    var sprocketsPath = [].concat(config.sprocketsPath);
+    for (var i = 0, len = sprocketsPath.length; i < len; i++){
+        sc.appendPath(config.basePath + '/' + sprocketsPath[i]);
+    }
     sc.appendExtensions(".ejs");
 
     for (var i = config.sprocketsBundles.length -1; i >=0; i--) {
