@@ -1,4 +1,5 @@
-# karma-sprockets
+karma-sprockets
+===============
 
 This is a plugin for sprockets based web applications. Notably, it tightens the integration
 between karma and rails applications. (Because they use sprockets bundles by default).
@@ -15,7 +16,8 @@ You know... the files that look like this:
 This plugin uses the [sprockets-chain](https://github.com/lucaong/sprockets-chain) node module.
 
 
-## Usage
+Usage
+-----
 
 Add the plugin to the config file first, like so:
 
@@ -28,7 +30,9 @@ Add the plugin to the config file first, like so:
 
 Then customize the following 2 configuration options in your karma.conf.js file:
 
-        sprocketsPath: 'app/assets/javascripts',
+        sprocketsPath: [
+            'app/assets/javascripts'
+        ],
         sprocketsBundles: [
             'core.js',
             'foundation.js',
@@ -38,18 +42,26 @@ Then customize the following 2 configuration options in your karma.conf.js file:
 The files referenced in those bundles will automatically be included in the `files` karma loads.
 
 
-## Development & debugging of karma plugins
+Development & debugging of karma plugins
+----------------------------------------
 
     npm install -g ~/devel/karma-sprockets
 
-    # Debugging with node-inspector
+#### Debugging with node-inspector
+
     node --debug-brk /usr/local/bin/karma start test/js/karma.conf.js --single-run
     node-inspector &
 
-    # Visit http://127.0.0.1:8080/debug?port=5858 to start debugging.
+Visit http://127.0.0.1:8080/debug?port=5858 to start debugging.
 
+#### Release
 
-## License
+* install locally & test `npm install -g ~/devel/karma-sprockets`
+* bump version & commit & push
+* `npm publish`
+
+License
+-------
 
 Copyright (c) 2014 Sebastian Zaha
 
