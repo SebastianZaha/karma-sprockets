@@ -26,7 +26,7 @@ var createSprockets = function(config) {
         var expanded = sc.depChain(config.sprocketsBundles[i]);
         for (var j = expanded.length -1; j >=0; j--) {
             config.files.unshift({
-                included: true, served: true, watched: false, pattern: expanded[j]
+                included: true, served: true, watched: config.autoWatch, pattern: expanded[j]
             });
         }
     }
