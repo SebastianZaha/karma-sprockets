@@ -1,6 +1,6 @@
 {
     "name": "karma-sprockets",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "A Karma plugin that helps importing js files from sprockets bundles.",
     "main": "index.js",
     "scripts": {
