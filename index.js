@@ -21,6 +21,8 @@ var createSprockets = function(config) {
         }
     }
     sc.appendExtensions(".ejs");
+    sc.appendExtensions(".jsx");
+    sc.appendExtensions(".cjsx");
 
     for (var i = config.sprocketsBundles.length -1; i >=0; i--) {
         var expanded = sc.depChain(config.sprocketsBundles[i]);
