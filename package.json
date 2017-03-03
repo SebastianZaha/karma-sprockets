@@ -20,6 +20,8 @@
         "name": "Sebastian Zaha",
         "email": "sebastian.zaha@gmail.com"
     },
-    "licenses": "MIT",
-    "dependencies": "sprockets-chain"
+    "license": "MIT",
+    "dependencies": {
+        "sprockets-chain": "^0.0.16"
+    }
 }
