@@ -1,13 +1,8 @@
 // chain, chain, chaaaain ...
 var Chain = require('sprockets-chain');
 
-var isAbsolutePath = function(path) {
-    if (!path.length) {
-        return false;
-    }
-
-    return path[0] == '/';
-};
+var isAbsolutePath = require('path').isAbsolute;
+var resolvePath   = require('path').resolve;
 
 var createSprockets = function(config) {
     var sc = new Chain();
@@ -17,7 +12,7 @@ var createSprockets = function(config) {
         if (isAbsolutePath(sprocketsPath[i])) {
             sc.appendPath(sprocketsPath[i]);
         } else {
-            sc.appendPath(config.basePath + '/' + sprocketsPath[i]);
+            sc.appendPath(resolvePath(config.basePath, sprocketsPath[i]));
         }
     }
     sc.appendExtensions(".ejs");
